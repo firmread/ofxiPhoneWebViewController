@@ -84,13 +84,13 @@ void ofxiPhoneWebViewController::setOrientation(ofOrientation orientation){
         screenHeight = screenHeight/2;
     }
     
-    if(orientation == OFXIPHONE_ORIENTATION_UPSIDEDOWN) {
+    if(orientation == OF_ORIENTATION_180) {
         rotation = PI;
     }
-    if(orientation == OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT) {
+    if(orientation == OF_ORIENTATION_90_LEFT) {
         rotation = PI / 2.0;
     }
-    if(orientation == OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT) {
+    if(orientation == OF_ORIENTATION_90_RIGHT) {
         rotation = -PI / 2.0;
     }
     

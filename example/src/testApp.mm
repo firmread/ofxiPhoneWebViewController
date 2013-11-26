@@ -6,12 +6,12 @@ void testApp::setup(){
 	// initialize the accelerometer
 	ofxAccelerometer.setup();
 	//If you want a landscape oreintation
-	iPhoneSetOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
-	
+//	iPhoneSetOrientation(OF_ORIENTATION_90_LEFT);
+//	ofSetOrientation(OF_ORIENTATION_90_LEFT);
 	ofBackground(127);
 
-    inlineWebViewController.showView(ofGetWindowWidth(), ofGetWindowHeight(), YES, NO, YES, NO);
-    inlineWebViewController.setOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
+    inlineWebViewController.showView(ofGetWidth(), ofGetHeight(), YES, NO, YES, YES);
+    inlineWebViewController.setOrientation(OF_ORIENTATION_DEFAULT);
     inlineWebViewController.setAutoRotation(false);
     
     ofAddListener(inlineWebViewController.event, this, &testApp::webViewEvent);
@@ -105,16 +105,16 @@ void testApp::deviceOrientationChanged(int newOrientation){
 
     switch (newOrientation) {
         case 1:
-            inlineWebViewController.setOrientation(OFXIPHONE_ORIENTATION_PORTRAIT);
+            inlineWebViewController.setOrientation(OF_ORIENTATION_DEFAULT);
             break;
         case 2:
-            inlineWebViewController.setOrientation(OFXIPHONE_ORIENTATION_UPSIDEDOWN);
+            inlineWebViewController.setOrientation(OF_ORIENTATION_180);
             break;
         case 3:
-            inlineWebViewController.setOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_LEFT);
+            inlineWebViewController.setOrientation(OF_ORIENTATION_90_LEFT);
             break;
         case 4:
-            inlineWebViewController.setOrientation(OFXIPHONE_ORIENTATION_LANDSCAPE_RIGHT);
+            inlineWebViewController.setOrientation(OF_ORIENTATION_90_RIGHT);
             break;
         default:
             break;
